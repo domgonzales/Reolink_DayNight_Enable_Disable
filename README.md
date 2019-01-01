@@ -1,5 +1,7 @@
 # Reolink_DayNight_Enable_Disable
 
+Tested on the 5MP Version of the Reolink RLC-410
+
 A simple set of bash scripts to grab an API Key from Reolink Cameras and Enable/Disable Auto Day Night Mode
 
 I couldn't let the camera handle this function anymore after I installed new lighting that caused the Audo Day Night mode to say in Day mode. This isn't a problem with the camera, but with the new lighting.
@@ -12,13 +14,17 @@ Once I had the scripts working I moved them over to Home-Assistant to manage the
 
 I used the Shell Command and added this to my configuration.yaml:
 
+```
 shell_command:
   daynighton: sh /home/homeassistant/.homeassistant/customscripts/daynighton.sh
   daynightoff: sh /home/homeassistant/.homeassistant/customscripts/daynightoff.sh
-  
+```
+
   I then created two automations for sunset and sunrise through the Web UI.
   Here is what they look like in the automations.yaml file:
-    
+
+
+```
   - id: '1546242767080'
   alias: Driveway Camera Daynight Off
   trigger:
